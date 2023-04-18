@@ -2,6 +2,7 @@
 #define ARRAYINT_H
 
 namespace containers {
+    // a esta altura van todas las variables, funciones, clases
     class ArrayInt {
         private:
            unsigned int capacity;

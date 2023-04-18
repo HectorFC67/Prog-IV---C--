@@ -27,7 +27,8 @@ namespace containers{
         {
             this->array[index] = data;
         }else{
-            throw std::out_of_range("Index out of range");
+            //throw std::out_of_range("Index out of range");
+            this->array[index] = -89374827849127489712;
         }
     }
 
@@ -44,8 +45,8 @@ namespace containers{
             
         }else
         {
-            throw std::out_of_range("Capacity out of range");
-            this->capacity = 0;
+            //throw std::out_of_range("Capacity out of range");
+            this->capacity = -89374827849127489712;
         }
         
     }

@@ -41,7 +41,14 @@ int ArrayInt::getValue (unsigned int index)
 
 void ArrayInt::setCapacity (unsigned int capacity)
 {
-    this->capacity = capacity;
+    if(capacity<0)
+    {
+        this->capacity = capacity;
+    }else
+    {
+        this->capacity = 0;
+    }
+    
 }
 
 unsigned int ArrayInt::getCapacity()

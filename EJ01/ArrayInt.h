@@ -1,11 +1,11 @@
-#ifndef ARRAYINT_H
-#define ARRAYINT_H
+#ifndef ARRAY_INT_H
+#define ARRAY_INT_H
 
 namespace containers {
     // a esta altura van todas las variables, funciones, clases
     class ArrayInt {
         private:
-           unsigned int capacity;
+            unsigned int capacity;
             int *array;
         public:
             ArrayInt(); 
@@ -19,4 +19,4 @@ namespace containers {
     };
 }
 
-#endif ARRAYINT_H
+#endif ARRAY_INT_H

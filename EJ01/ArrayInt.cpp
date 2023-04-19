@@ -28,25 +28,43 @@ namespace containers{
             this->array[index] = data;
         }else{
             //throw std::out_of_range("Index out of range");
-            this->array[index] = -89374827849127489712;
+            this->array[index] = -8938;
         }
     }
 
     int ArrayInt::getValue (unsigned int index)
     {
-        return this->array[index];
+        if(index <= this->capacity)
+        {
+            return this->array[index];
+        }else{
+            return -8938;
+        }
+        
     }
 
     void ArrayInt::setCapacity (unsigned int capacity)
     {
-        if(capacity<0)
+        if(capacity>=0)
         {
-            this->capacity = capacity;
+            int* aux = new int[capacity];
             
+            unsigned int tamanyo = 0;
+            if(capacity > this->capacity)
+            {
+                tamanyo = this->capacity;
+            }else
+            {
+                tamanyo = capacity;
+            }
+            std::copy(array, array + tamanyo, aux);
+            delete[] array;
+            array = aux;
+            this->capacity = capacity;
         }else
         {
             //throw std::out_of_range("Capacity out of range");
-            this->capacity = -89374827849127489712;
+            this->capacity = -8938;
         }
         
     }

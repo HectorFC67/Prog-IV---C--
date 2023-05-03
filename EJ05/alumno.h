@@ -8,10 +8,12 @@ class Alumno
         int id;
         char *nombre;
     public:
-    Alumno(const char *nombre);
-    ~Alumno();
-    int getID();
-    char* getNombre();
+        Alumno(const char *nombre);
+        Alumno(const Alumno &a);
+        ~Alumno();
+        int getID();
+        char *getNombre();
 };
+
 
 #endif

@@ -1,3 +1,7 @@
+#ifndef POINT_H_
+#define POINT_H_
+
+
 class Point
 {
     private:
@@ -8,8 +12,12 @@ class Point
         void suma2(Point &p);
         void suma3(Point *p);
         Point getSuma(Point &p);
-        void print();
         void swap1(Point p);
         void swap2(Point &p);
         void swap3(Point *p);
+        void print();
+
 };
+
+
+#endif

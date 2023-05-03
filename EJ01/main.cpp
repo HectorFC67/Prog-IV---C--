@@ -1,39 +1,38 @@
 #include <iostream>
-#include "ArrayInt.h"
+
+#include "Array.h"
+
 
 using namespace std;
 using namespace containers;
 
+void printArray(ArrayInt *arrayInt)
+{
+    unsigned int counter = 0;
+    while(counter< arrayInt->getCapacity())
+    {
+        cout<< arrayInt->getValue(counter) << endl;
+        counter ++;
+    }
+
+}
+
 int main()
 {
-    // Create an ArrayInt object
-    ArrayInt myArray;
+    ArrayInt arrayInt(10);
 
-    // Test setValue function
-    myArray.setValue(0, 10);
-    myArray.setValue(1, 20);
-    myArray.setValue(2, 30);
+    for(int i = 0;i < 15; i++)
+    {
+        arrayInt.setValue(i,i);
+    }
 
-    // Test getValue function
-    cout << "Value at index 0: " << myArray.getValue(0) << endl;
-    cout << "Value at index 1: " << myArray.getValue(1) << endl;
-    cout << "Value at index 2: " << myArray.getValue(2) << endl;
+    arrayInt.setCapacity(10);
 
-    // Test setCapacity function
-    ArrayInt arrayCapacity = ArrayInt(5);
-    arrayCapacity.setCapacity(4);
+    cout << endl;
+    cout << endl;
 
-    // Test getCapacity function
-    cout << "Array capacity: " << arrayCapacity.getCapacity() << endl;
-
-    // Test setValue with out of range index
-    myArray.setValue(10, 40);
-    cout << "Value at index 10: " << myArray.getValue(10) << endl;
-
-    // Test setCapacity with negative capacity
-    ArrayInt arrayCapacityNegative;
-    arrayCapacityNegative.setCapacity(-5);
-    cout << "Array capacity: " << arrayCapacityNegative.getCapacity() << endl;
+    printArray(&arrayInt);
 
     return 0;
+    
 }

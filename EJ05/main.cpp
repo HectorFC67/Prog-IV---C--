@@ -2,8 +2,6 @@
 #include "iostream"
 using namespace std;
 
-
-
 void printAlumno(Alumno alumno)
 {
     // Imprime el ID y el nombre del Alumno
@@ -26,7 +24,7 @@ void printAlumnoP(Alumno * alumno)
     cout << "* Alumno" << endl;
     cout << "\t*ID: " << alumno->getID() << endl;
     cout << "\t*Nombre: " << alumno->getNombre() << endl;
-    }
+}
 
 int main(void)
 {

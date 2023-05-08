@@ -27,7 +27,7 @@ class Alumno: public Persona
         int getNumAsignaturas();
         float* getNotas();
         void setNotas(float* notas);
-        void diHola() override;   
+        virtual void diHola();   
 };
 
 #endif

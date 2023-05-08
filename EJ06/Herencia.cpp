@@ -40,6 +40,7 @@ Alumno::Alumno(int edad, char* nombre, int numAsignaturas, float* notas):Persona
 {
     this->numAsignaturas = numAsignaturas;
     this->notas = new float[numAsignaturas];
+    this->notas = notas;
     cout << "Constructor Alumno creado" << endl;
 }
 
@@ -75,7 +76,7 @@ void Alumno::setNotas(float* notas)
     this->notas = notas;
 }
 
-void diHola()
+void Persona::diHola()
 {
     cout<<"Hola soy una persona"<<endl;
 }

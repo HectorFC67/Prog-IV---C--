@@ -9,9 +9,10 @@ class Persona
     public:
         Persona(int edad, const char* nombre);
         Persona(const Persona &p);
-        ~Persona();
+        virtual~Persona();
         int getEdad();
         char* getNombre();
+        virtual void diHola();
 };
 
 class Alumno: public Persona
@@ -22,10 +23,11 @@ class Alumno: public Persona
     public:
         Alumno(int edad, char* nombre, int numAsignaturas, float* notas);
         Alumno(const Alumno &a);
-        ~Alumno();
+        virtual~Alumno();
         int getNumAsignaturas();
         float* getNotas();
         void setNotas(float* notas);
+        void diHola() override;   
 };
 
 #endif

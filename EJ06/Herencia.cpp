@@ -74,3 +74,13 @@ void Alumno::setNotas(float* notas)
 {
     this->notas = notas;
 }
+
+void diHola()
+{
+    cout<<"Hola soy una persona"<<endl;
+}
+
+void Alumno::diHola()
+{
+    cout<<"Hola soy un alumno"<<endl;
+}

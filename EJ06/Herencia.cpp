@@ -39,8 +39,14 @@ char* Persona::getNombre()
 Alumno::Alumno(int edad, char* nombre, int numAsignaturas, float* notas):Persona(this->edad, this->nombre)
 {
     this->numAsignaturas = numAsignaturas;
-    this->notas = new float[numAsignaturas];
-    this->notas = notas;
+    cout<<"1"<<endl;
+    this->notas = new float[this->numAsignaturas];
+    cout<<"2"<<endl;
+    for(int i=0;i<this->numAsignaturas; i++)
+    {
+        this->notas[i] = notas[i];
+        cout<<"bucle"<<endl;
+    }
     cout << "Constructor Alumno creado" << endl;
 }
 
@@ -50,8 +56,11 @@ Alumno::Alumno(const Alumno &a):Persona(this->edad, this->nombre)
     this->nombre = new char(strlen(a.nombre)+1);
     strcpy(this->nombre, a.nombre);
     this->numAsignaturas = a.numAsignaturas;
-    this->notas = new float[numAsignaturas];
-    this->notas = a.notas;
+    this->notas = new float[this->numAsignaturas];
+        for(int i=0;i<numAsignaturas; i++)
+    {
+        this->notas[i] = a.notas[i];
+    }
     cout << "Constructor copia de Alumno creado" << endl;
 }
 

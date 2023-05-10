@@ -13,6 +13,7 @@ class Persona
         int getEdad();
         char* getNombre();
         virtual void diHola();
+        virtual void escribirEnFichero(const char* fichero) = 0;
 };
 
 class Alumno: public Persona
@@ -28,6 +29,7 @@ class Alumno: public Persona
         float* getNotas();
         void setNotas(float* notas);
         void diHola() override;   
+        void escribirEnFichero(const char* fichero) override;
 };
 
 #endif

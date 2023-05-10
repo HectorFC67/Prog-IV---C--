@@ -95,7 +95,7 @@ void Alumno::diHola()
 
 void Alumno::escribirEnFichero(const char* fichero) 
 {
-    FILE *archivo = std::fopen(fichero, "w");
+    FILE *archivo = fopen(fichero, "a");
 
     if (archivo != NULL) {
         fprintf(archivo, "%s\t%i\t%i: ", this->nombre, this->edad, this->numAsignaturas);

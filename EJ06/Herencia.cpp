@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Persona::Persona(int edad, const char* nombre)
+Persona::Persona(int edad, char* nombre)
 {
     this->edad = edad;
     this->nombre = new char(strlen(nombre)+1);
@@ -36,16 +36,13 @@ char* Persona::getNombre()
     return this->nombre;
 }
 
-Alumno::Alumno(int edad, char* nombre, int numAsignaturas, float* notas):Persona(this->edad, this->nombre)
-{
+Alumno::Alumno(int edad, char* nombre, int numAsignaturas, float* notas):Persona(edad, nombre)
+{ 
     this->numAsignaturas = numAsignaturas;
-    cout<<"1"<<endl;
     this->notas = new float[this->numAsignaturas];
-    cout<<"2"<<endl;
     for(int i=0;i<this->numAsignaturas; i++)
     {
         this->notas[i] = notas[i];
-        cout<<"bucle"<<endl;
     }
     cout << "Constructor Alumno creado" << endl;
 }

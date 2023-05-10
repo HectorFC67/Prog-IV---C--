@@ -7,7 +7,7 @@ class Persona
         int edad;
         char* nombre;
     public:
-        Persona(int edad, const char* nombre);
+        Persona(int edad, char* nombre);
         Persona(const Persona &p);
         virtual~Persona();
         int getEdad();
@@ -27,7 +27,7 @@ class Alumno: public Persona
         int getNumAsignaturas();
         float* getNotas();
         void setNotas(float* notas);
-        virtual void diHola();   
+        void diHola() override;   
 };
 
 #endif

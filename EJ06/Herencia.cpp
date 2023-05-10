@@ -98,10 +98,10 @@ void Alumno::escribirEnFichero(const char* fichero)
     FILE *archivo = std::fopen(fichero, "w");
 
     if (archivo != NULL) {
-        fprintf(archivo, "Hola, me llamo %s, tengo %i anyos, estudio %i asignaturas y estas son mis notas: ", this->nombre, this->edad, this->numAsignaturas);
+        fprintf(archivo, "%s\t%i\t%i: ", this->nombre, this->edad, this->numAsignaturas);
         for(int i = 0; i<this->numAsignaturas; i++)
         {
-            fprintf(archivo, "%.2f ", this->notas[i]);
+            fprintf(archivo, "\t%.2f", this->notas[i]);
         }
         fprintf(archivo, "\n");
         fclose(archivo);

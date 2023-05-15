@@ -31,5 +31,27 @@ class Alumno: public Persona
         void diHola() override;   
         void escribirEnFichero(const char* fichero) override;
 };
+class Docente: public Persona
+{
+    private:
+        char* titulacion;
+        Asignatura asignatura[];
+    public:
+        Docente(int edad, char* nombre, char* titulacion, Asignatura asignatura[]);
+        Docente(const Docente &d);
+        ~Docente();
+};
+class Asignatura
+{
+ private:
+        char* nombre;
+        int curso;
+        int creditos;
+        int numAlumnos;
+        Alumno* estudiantesMatriculados;
+        int notas;
+    public:
+
+};
 
 #endif

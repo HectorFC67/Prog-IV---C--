@@ -19,6 +19,7 @@ int main() {
     p4.visualizar();
 
     Point3D p5;
-    cin >> p5; 
+    cout << "Introduce las coordenadas x, y, z del punto separadas por espacios: ";
+    cin >> p5;
     cout << "Punto introducido: " << p5 << endl;
   }

@@ -22,7 +22,6 @@ Point3D Point3D::operator*(double scalar) const {
 }
 
 istream& operator>>(istream& in, Point3D& p) {
-    cout << "Introduce las coordenadas x, y, z del punto separadas por espacios: ";
     in >> p.x >> p.y >> p.z;
     return in;
 }

@@ -1,25 +1,26 @@
-#include <iostream>
+#include "Punto.h"
 #include "Punto3D.h"
 
-using namespace std;
-
 int main() {
-    Point3D p1(1, 2, 3);
-    Point3D p2(4, 5, 6);
-    Point3D p3 = p1.operator+(p2); 
-    p3.visualizar(); 
+  Punto* puntos[5];
+  puntos[0] = new Punto(1, 2);
+  puntos[1] = new Punto3D(3, 4, 5);
+  puntos[2] = new Punto(6, 7);
+  puntos[3] = new Punto3D(8, 9, 10);
+  puntos[4] = new Punto(11, 12);
 
-    p1.operator+=(p2); 
-    p1.visualizar(); 
-
-    double dot_product = p1.operator*(p2); 
-    cout << "Producto escalar de p1 y p2: " << dot_product << endl;
-
-    Point3D p4 = p1.operator*(2); 
-    p4.visualizar();
-
-    Point3D p5;
-    cout << "Introduce las coordenadas x, y, z del punto separadas por espacios: ";
-    cin >> p5;
-    cout << "Punto introducido: " << p5 << endl;
+  for (int i = 0; i < 5; i++) {
+    puntos[i]->visualizar();
   }
+
+  Punto3D punto1(1, 2, 3);
+  Punto3D punto2(4, 5, 6);
+  Punto3D punto3 = punto1.operator*(punto2);
+  punto3.visualizar();
+
+  Punto3D punto4(1, 2, 3);
+  punto4.operator*(2);
+  punto4.visualizar();
+
+  return 0;
+}

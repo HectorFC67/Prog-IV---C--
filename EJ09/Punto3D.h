@@ -1,21 +1,20 @@
-#include <iostream>
-using namespace std;
+#ifndef PUNTO3D_H
+#define PUNTO3D_H
 
-class Point3D {
-private:
-    double x, y, z;
+#include "Punto.h"
 
-public:
-    Point3D(double x = 0, double y = 0, double z = 0);
+class Punto3D : public Punto {
+  private:
+    float z;
 
-    // Sobrecarga de operadores
-    Point3D operator+(const Point3D& p) const;
-    Point3D& operator+=(const Point3D& p);
-    double operator*(const Point3D& p) const;
-    Point3D operator*(double scalar) const;
+  public:
+    Punto3D(float x = 0.0, float y = 0.0, float z = 0.0);
 
-    friend istream& operator>>(istream& in, Point3D& p);
-    friend ostream& operator<<(ostream& out, const Point3D& p);
+    void visualizar() override;
 
-    void visualizar() const;
+    Punto3D operator*(const Punto3D& other) const;
+
+    void operator*(int escalar);
 };
+
+#endif

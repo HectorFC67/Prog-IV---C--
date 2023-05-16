@@ -1,36 +1,25 @@
 #include "Punto3D.h"
+#include <iostream>
 
-Point3D::Point3D(double x, double y, double z) : x(x), y(y), z(z) {}
+using namespace std;
 
-Point3D Point3D::operator+(const Point3D& p) const {
-    return Point3D(x + p.x, y + p.y, z + p.z);
+Punto3D::Punto3D(float x, float y, float z) : Punto(x, y) {
+  this->z = z;
 }
 
-Point3D& Point3D::operator+=(const Point3D& p) {
-    x += p.x;
-    y += p.y;
-    z += p.z;
-    return *this;
+void Punto3D::visualizar() {
+  cout << "Punto3D (" << x << ", " << y << ", " << z << ")" << endl;
 }
 
-double Point3D::operator*(const Point3D& p) const {
-    return x * p.x + y * p.y + z * p.z;
+Punto3D Punto3D::operator*(const Punto3D& other) const {
+  float x = this->y * other.z - this->z * other.y;
+  float y = this->z * other.x - this->x * other.z;
+  float z = this->x * other.y - this->y * other.x;
+  return Punto3D(x, y, z);
 }
 
-Point3D Point3D::operator*(double scalar) const {
-    return Point3D(x * scalar, y * scalar, z * scalar);
-}
-
-istream& operator>>(istream& in, Point3D& p) {
-    in >> p.x >> p.y >> p.z;
-    return in;
-}
-
-ostream& operator<<(ostream& out, const Point3D& p) {
-    out << "(" << p.x << ", " << p.y << ", " << p.z << ")";
-    return out;
-}
-
-void Point3D::visualizar() const {
-    cout << "(" << x << ", " << y << ", " << z << ")" << endl;
+void Punto3D::operator*(int escalar) {
+  this->x *= escalar;
+  this->y *= escalar;
+  this->z *= escalar;
 }

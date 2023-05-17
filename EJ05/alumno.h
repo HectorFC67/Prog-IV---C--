@@ -13,6 +13,7 @@ class Alumno
         ~Alumno();
         int getID();
         char *getNombre();
+        void operator=(const Alumno &a);
 };
 
 

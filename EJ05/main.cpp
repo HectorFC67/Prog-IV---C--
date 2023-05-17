@@ -28,8 +28,8 @@ void printAlumnoP(Alumno * alumno)
 
 int main(void)
 {
-    Alumno a("Hector");
-
+    Alumno a("Hector ");
+    printAlumno(a);
     cout << endl;
     cout << endl;
 
@@ -62,13 +62,17 @@ int main(void)
 	cout << endl;
 
 	cout << "Borrado manual del objeto reservado utilizando operador delete" << endl;
-	//delete d;
+	delete d;
 
 	cout << "Llamada a paso por referencia" << endl;
 	printAlumnoRef(a); 
 	cout << endl;
 	cout << endl;
 
+    cout << "Vamos a crear alumno asignando los valores de otro existente" << endl;
+    Alumno e = Alumno ("Alumno E");
+    e = a;
+    printAlumnoRef(e);
 	cout << "Eliminacion automatica de las variables no dinamicas" << endl;
 	return 0;
     

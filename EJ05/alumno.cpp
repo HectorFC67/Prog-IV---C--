@@ -12,12 +12,12 @@ Alumno::Alumno(const char *nombre)
         this->nombre[i] = nombre[i];
     }
     //strcpy(this->nombre, nombre);
-    cout<<"Hemos creado un subnormal"<<endl;
+    cout<<"Hemos creado un alumno"<<endl;
 }
 
 Alumno::Alumno(const Alumno &a)
 {
-	cout << "Construyendo Alumno mediante copia" << endl;
+	cout << "Construyendo alumno mediante copia" << endl;
 	this->id = a.id;
 	this->nombre = new char[strlen(a.nombre) + 1];
 	strcpy(this->nombre, a.nombre);
@@ -26,7 +26,7 @@ Alumno::Alumno(const Alumno &a)
 Alumno::~Alumno()
 {
     delete [] this->nombre;
-    cout << "Hemos eliminado un Alumno"<< endl;
+    cout << "Hemos eliminado un alumno"<< endl;
 
 }
 
@@ -41,3 +41,11 @@ char * Alumno::getNombre()
 
 }
 int Alumno::counter = 0;
+
+void Alumno::operator=(const Alumno &a)
+{
+	this->id = a.id;
+	this->nombre = new char[strlen(a.nombre) + 1];
+	strcpy(this->nombre, a.nombre);
+    cout<<"Hemos metido a los datos de otro alumno con operador asignar"<<endl;
+}

@@ -1,7 +1,8 @@
 #include <iostream>
+#include "Punto.h"
 using namespace std;
 
-class Point3D {
+class Point3D : public Punto{
 private:
     double x, y, z;
 

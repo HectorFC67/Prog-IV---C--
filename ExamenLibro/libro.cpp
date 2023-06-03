@@ -39,6 +39,7 @@ Libro::~Libro()
 {
     delete[] this->titulo;
     delete[] this->autor;
+    cout << "Libro eliminado" << endl;
 }
 char* Libro::getTitulo()
 {

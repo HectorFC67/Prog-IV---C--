@@ -18,7 +18,7 @@ class Libro
         void setAutor(char* autor);
         int getAnyoPublicacion();
         void setAnyoPublicacion(int anyoPublicacion);
-        void imprimirInfo();
+        virtual void imprimirInfo();
 };
 
 #endif

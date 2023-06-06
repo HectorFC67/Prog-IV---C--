@@ -1,24 +1,22 @@
 #ifndef LIBRO_H
 #define LIBRO_H
 
-class Libro
-{
-    private:
+class Libro {
+    protected:
         char* titulo;
         char* autor;
-        int anyoPublicacion;
+        int anoPublicacion;
+
     public:
-        Libro();
-        Libro(const char* titulo, const char* autor, int anyoPublicacion);
-        Libro(const Libro &l);
-        ~Libro();
-        char* getTitulo();
-        void setTitulo(char* titulo);
-        char* getAutor();
-        void setAutor(char* autor);
-        int getAnyoPublicacion();
-        void setAnyoPublicacion(int anyoPublicacion);
+        Libro(const char* titulo, const char* autor, int anoPublicacion);
+        virtual ~Libro();
+        const char* getTitulo();
+        void setTitulo(const char* titulo);
+        const char* getAutor();
+        void setAutor(const char* autor);
+        int getAnoPublicacion();
+        void setAnoPublicacion(int anoPublicacion);
         virtual void imprimirInfo();
-};
+    };
 
 #endif

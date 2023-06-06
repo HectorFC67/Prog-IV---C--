@@ -1,76 +1,53 @@
-#include "libro.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "Libro.h"
 #include <iostream>
-
+#include <cstring>
 using namespace std;
-Libro::Libro()
-{
-    this->titulo = nullptr;
-    this->autor = nullptr;
-    this->anyoPublicacion = 0;
+
+Libro::Libro(const char* titulo, const char* autor, int anoPublicacion) {
+    this->titulo = new char[strlen(titulo) + 1];
+    strcpy(this->titulo, titulo);
+
+    this->autor = new char[strlen(autor) + 1];
+    strcpy(this->autor, autor);
+
+    this->anoPublicacion = anoPublicacion;
 }
-Libro::Libro(const char* titulo, const char* autor, int anyoPublicacion)
-{
-    this->titulo = new char[strlen(titulo)+1];
-    for(int i=0; i<strlen(titulo); i++)
-        this->titulo[i] = titulo[i];
 
-    this->autor = new char[strlen(autor)+1];
-    for(int i=0; i<strlen(autor); i++)
-        this->autor[i] = autor[i];
-
-    this->anyoPublicacion = anyoPublicacion;
+Libro::~Libro() {
+    delete[] titulo;
+    delete[] autor;
 }
-Libro::Libro(const Libro &l)
-{
-    this->titulo = new char[strlen(l.titulo)+1];
-    for(int i=0; i<strlen(l.titulo); i++)
-        this->titulo[i] = titulo[i];
 
-    this->autor = new char[strlen(l.autor)+1];
-    for(int i=0; i<strlen(l.autor); i++)
-        this->autor[i] = autor[i];
-
-    this->anyoPublicacion = anyoPublicacion;
+const char* Libro::getTitulo() {
+    return titulo;
 }
-Libro::~Libro()
-{
+
+void Libro::setTitulo(const char* titulo) {
     delete[] this->titulo;
+    this->titulo = new char[strlen(titulo) + 1];
+    strcpy(this->titulo, titulo);
+}
+
+const char* Libro::getAutor() {
+    return autor;
+}
+
+void Libro::setAutor(const char* autor) {
     delete[] this->autor;
-    cout << "Libro eliminado" << endl;
+    this->autor = new char[strlen(autor) + 1];
+    strcpy(this->autor, autor);
 }
-char* Libro::getTitulo()
-{
-    return this->titulo;
+
+int Libro::getAnoPublicacion() {
+    return anoPublicacion;
 }
-void Libro::setTitulo(char* titulo)
-{
-    this->titulo = new char[strlen(titulo)+1];
-    for(int i=0; i<strlen(titulo); i++)
-        this->titulo[i] = titulo[i];
+
+void Libro::setAnoPublicacion(int anoPublicacion) {
+    this->anoPublicacion = anoPublicacion;
 }
-char* Libro::getAutor()
-{
-    return this->autor;
-}
-void Libro::setAutor(char* autor)
-{
-    this->autor = new char[strlen(autor)+1];
-    for(int i=0; i<strlen(autor); i++)
-        this->autor[i] = autor[i];
-}
-int Libro::getAnyoPublicacion()
-{
-    return this->anyoPublicacion;
-}
-void Libro::setAnyoPublicacion(int anyoPublicacion)
-{
-    this->anyoPublicacion = anyoPublicacion;
-}
-void Libro::imprimirInfo()
-{
-    cout << "Libro " << this->titulo << " de " << this->autor 
-    << " en el anyo " << this->anyoPublicacion << endl;
+
+void Libro::imprimirInfo() {
+    cout << "Título: " << titulo << endl;
+    cout << "Autor: " << autor << endl;
+    cout << "Año de publicación: " << anoPublicacion << endl;
 }

@@ -1,20 +1,18 @@
-#include "libro.h"
+#ifndef LIBROPRESTADO_H
+#define LIBROPRESTADO_H
 
-#ifndef LIBRO_PRESTADO_H
-#define LIBRO_PRESTADO_H
+#include "Libro.h"
 
-class LibroPrestado : public Libro
-{
-    private:
-        char* fechaDevolucion;
-    public:
-        LibroPrestado();
-        LibroPrestado(const char* titulo, const char* autor, int anyoPublicacion, const char* fechaDevolucion);
-        LibroPrestado(const LibroPrestado &l);
-        ~LibroPrestado();
-        char* getFechaDevolucion();
-        void setFechaDevolucion(const char* fechaDevolucion);
-        void imprimirInfo() override;
+class LibroPrestado : public Libro {
+private:
+    char* fechaDevolucion;
+
+public:
+    LibroPrestado(const char* titulo, const char* autor, int anoPublicacion, const char* fechaDevolucion);
+    ~LibroPrestado();
+    const char* getFechaDevolucion();
+    void setFechaDevolucion(const char* fechaDevolucion);
+    void imprimirInfo();
 };
 
 #endif

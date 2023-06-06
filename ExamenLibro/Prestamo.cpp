@@ -40,8 +40,8 @@ void Prestamo::setFechaPrestamo(const char* fechaPrestamo) {
 }
 
 void Prestamo::imprimirInfo() {
-    cout << "Información del préstamo:" << endl;
+    cout << "Informacion del prestamo:" << endl;
     libro->imprimirInfo();
     cout << "Usuario: " << usuario << endl;
-    cout << "Fecha de préstamo: " << fechaPrestamo << endl;
+    cout << "Fecha de prestamo: " << fechaPrestamo << endl;
 }

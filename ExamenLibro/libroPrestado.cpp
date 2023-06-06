@@ -3,8 +3,8 @@
 #include <cstring>
 using namespace std;
 
-LibroPrestado::LibroPrestado(const char* titulo, const char* autor, int anoPublicacion, const char* fechaDevolucion)
-    : Libro(titulo, autor, anoPublicacion) {
+LibroPrestado::LibroPrestado(const char* titulo, const char* autor, int anyoPublicacion, const char* fechaDevolucion)
+    : Libro(titulo, autor, anyoPublicacion) {
     this->fechaDevolucion = new char[strlen(fechaDevolucion) + 1];
     strcpy(this->fechaDevolucion, fechaDevolucion);
 }
@@ -25,5 +25,5 @@ void LibroPrestado::setFechaDevolucion(const char* fechaDevolucion) {
 
 void LibroPrestado::imprimirInfo() {
     Libro::imprimirInfo();
-    cout << "Fecha de devolución: " << fechaDevolucion << endl;
+    cout << "Fecha de devolucion: " << fechaDevolucion << endl;
 }

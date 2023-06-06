@@ -10,7 +10,7 @@ Libro::Libro(const char* titulo, const char* autor, int anoPublicacion) {
     this->autor = new char[strlen(autor) + 1];
     strcpy(this->autor, autor);
 
-    this->anoPublicacion = anoPublicacion;
+    this->anyoPublicacion = anoPublicacion;
 }
 
 Libro::~Libro() {
@@ -39,15 +39,15 @@ void Libro::setAutor(const char* autor) {
 }
 
 int Libro::getAnoPublicacion() {
-    return anoPublicacion;
+    return anyoPublicacion;
 }
 
-void Libro::setAnoPublicacion(int anoPublicacion) {
-    this->anoPublicacion = anoPublicacion;
+void Libro::setAnoPublicacion(int anyoPublicacion) {
+    this->anyoPublicacion = anyoPublicacion;
 }
 
 void Libro::imprimirInfo() {
-    cout << "Título: " << titulo << endl;
+    cout << "Titulo: " << titulo << endl;
     cout << "Autor: " << autor << endl;
-    cout << "Año de publicación: " << anoPublicacion << endl;
+    cout << "Anyo de publicacion: " << anyoPublicacion << endl;
 }

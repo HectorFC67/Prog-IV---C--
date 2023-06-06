@@ -8,7 +8,7 @@ private:
     char* fechaDevolucion;
 
 public:
-    LibroPrestado(const char* titulo, const char* autor, int anoPublicacion, const char* fechaDevolucion);
+    LibroPrestado(const char* titulo, const char* autor, int anyoPublicacion, const char* fechaDevolucion);
     ~LibroPrestado();
     const char* getFechaDevolucion();
     void setFechaDevolucion(const char* fechaDevolucion);

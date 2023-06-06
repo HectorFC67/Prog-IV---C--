@@ -15,7 +15,7 @@ int main() {
     biblioteca.agregarLibro(&libro2);
     biblioteca.agregarLibro(&libro3);
 
-    // Imprimir la información de la biblioteca
+    // Imprimir la informacion de la biblioteca
     biblioteca.imprimirInfo();
 
     // Crear dos objetos de la clase Prestamo
@@ -25,7 +25,7 @@ int main() {
     Prestamo prestamo1(&libroPrestado1, "Usuario 1", "01/06/2023");
     Prestamo prestamo2(&libroPrestado2, "Usuario 2", "03/06/2023");
 
-    // Imprimir la información de los dos préstamos realizados
+    // Imprimir la informacion de los dos prestamos realizados
     prestamo1.imprimirInfo();
     prestamo2.imprimirInfo();
 

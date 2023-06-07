@@ -6,24 +6,19 @@
 class Vehiculo
 {
     private:
-        int codigo;
+        char* codigo;
         Posicion posicionActual;
         Posicion* ruta;
         int numeroPosicionesRuta;
     public:
-        Vehiculo();
-        Vehiculo(int codigo, Posicion posicionActual, Posicion* ruta, int numeroPosicionesRuta);
-        Vehiculo(const Vehiculo &v);
+        Vehiculo(const char* codigo, const Posicion posicionActual, Posicion* ruta, int numeroPosicionesRuta);
         virtual ~Vehiculo();
         virtual void actualizarPosicion(Posicion posicionActual);
-        int getCodigo();
-        void setCodigo(int codigo);
-        Posicion getPosicionActual();
-        void setPosicionActual(Posicion posicionActual);
-        Posicion* getRuta();
-        void setRuta(Posicion* ruta, int numeroPosicionesRuta);
-        int getNumeroPosicionesRuta();
-        void setNumeroPosicionesRuta(int numeroPosicionesRuta);       
+        const char* getCodigo() const;
+        virtual void actualizarPosicion(Posicion &nuevaPosicion);
+        virtual void comprobarRuta();
+        virtual void activarAlarma();
+        bool estaEnRuta();    
 };
 
 #endif 

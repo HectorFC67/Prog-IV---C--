@@ -9,7 +9,6 @@ class Aereo :public Vehiculo
         float alturaMax;
         float alturaMin;
     public:
-        Aereo();
         Aereo(int codigo, Posicion posicionActual, Posicion* ruta, int numeroPosicionesRuta, float alturaMax, float alturaMin);
         Aereo(const Aereo &a);
         ~Aereo();

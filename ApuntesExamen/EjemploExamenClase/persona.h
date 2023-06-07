@@ -13,15 +13,15 @@ public:
     Persona(const Persona& other);
     virtual ~Persona();
 
-    char* getDni() const;
-    char* getNombre() const;
-    int getEdad() const;
+    char* getDni();
+    char* getNombre();
+    int getEdad();
 
     void setDni(const char* dni);
     void setNombre(const char* nombre);
     void setEdad(int edad);
 
-    virtual void imprimirInfo() const;
+    virtual void imprimirInfo();
 };
 
 #endif  // PERSONA_H

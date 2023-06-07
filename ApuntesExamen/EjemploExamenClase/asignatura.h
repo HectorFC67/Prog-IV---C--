@@ -12,13 +12,13 @@ public:
     Asignatura(const Asignatura& other);
     ~Asignatura();
 
-    char* getNombre() const;
-    int getCreditos() const;
+    char* getNombre();
+    int getCreditos();
 
     void setNombre(const char* nombre);
     void setCreditos(int creditos);
 
-    void imprimirInfo() const;
+    void imprimirInfo();
 };
 
 #endif  // ASIGNATURA_H

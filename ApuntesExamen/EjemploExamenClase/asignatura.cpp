@@ -24,29 +24,35 @@ Asignatura::Asignatura(const Asignatura& other)
     this->creditos = other.creditos;
 }
 
-Asignatura::~Asignatura() {
+Asignatura::~Asignatura() 
+{
     delete[] nombre;
 }
 
-char* Asignatura::getNombre() const {
+char* Asignatura::getNombre() 
+{
     return nombre;
 }
 
-int Asignatura::getCreditos() const {
+int Asignatura::getCreditos() 
+{
     return creditos;
 }
 
-void Asignatura::setNombre(const char* nombre) {
+void Asignatura::setNombre(const char* nombre) 
+{
     delete[] this->nombre;
     this->nombre = new char[strlen(nombre) + 1];
     strcpy(this->nombre, nombre);
 }
 
-void Asignatura::setCreditos(int creditos) {
+void Asignatura::setCreditos(int creditos) 
+{
     this->creditos = creditos;
 }
 
-void Asignatura::imprimirInfo() const {
+void Asignatura::imprimirInfo() 
+{
     cout << "Nombre de la asignatura: " << nombre << endl;
     cout << "Creditos: " << creditos << endl << endl;
 }

@@ -14,7 +14,7 @@ Clase::Clase(int id, Persona* personas, int numPersonas)
 {
     this->id = id;
     this->numPersonas = numPersonas;
-    this->personas = new Persona[numPersonas];
+    this->personas = new Persona[numPersonas + 1];
     for (int i = 0; i < numPersonas; i++) 
     {
         this->personas[i] = personas[i];
@@ -25,7 +25,7 @@ Clase::Clase(const Clase &other)
 {
     this->id = other.id;
     this->numPersonas = other.numPersonas;
-    this->personas = new Persona[this->numPersonas];
+    this->personas = new Persona[this->numPersonas + 1];
     for (int i = 0; i < this->numPersonas; i++) 
     {
         this->personas[i] = other.personas[i];

@@ -19,8 +19,7 @@ Profesor::Profesor(const char* dni, const char* nombre, int edad, Asignatura asi
 
 Profesor::Profesor(const Profesor& other) : Persona(other)
 {
-    this->asignatura.setNombre(other.asignatura.getNombre());
-    this->asignatura.setCreditos(other.asignatura.getCreditos());
+    this->asignatura = other.asignatura;
 }
 
 Profesor::~Profesor()
@@ -28,7 +27,7 @@ Profesor::~Profesor()
 
 }
 
-Asignatura Profesor::getAsignatura() const 
+Asignatura Profesor::getAsignatura()
 {
     return asignatura;
 }
@@ -39,7 +38,7 @@ void Profesor::setAsignatura(Asignatura asignatura)
     this->asignatura.setCreditos(asignatura.getCreditos());
 }
 
-void Profesor::imprimirInfo() const 
+void Profesor::imprimirInfo()
 {
     Persona::imprimirInfo();
     cout << "Asignatura impartida: ";

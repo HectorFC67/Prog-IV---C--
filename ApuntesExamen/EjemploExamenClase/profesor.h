@@ -14,10 +14,10 @@ public:
     Profesor(const Profesor& other);
     ~Profesor();
 
-    Asignatura getAsignatura() const;
+    Asignatura getAsignatura();
     void setAsignatura(Asignatura asignatura);
 
-    void imprimirInfo() const override;
+    void imprimirInfo() override;
 };
 
 #endif  // PROFESOR_H

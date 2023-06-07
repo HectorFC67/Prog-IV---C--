@@ -19,7 +19,7 @@ public:
     int getNumAsignaturas() const; 
     void agregarAsignatura(const char* nombreAsignatura, int creditosAsignatura);
 
-    void imprimirInfo() const override;
+    void imprimirInfo() override;
 };
 
 #endif  // ALUMNO_H

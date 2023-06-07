@@ -35,17 +35,17 @@ Persona::~Persona()
     delete[] nombre;
 }
 
-char* Persona::getDni() const 
+char* Persona::getDni() 
 {
     return dni;
 }
 
-char* Persona::getNombre() const 
+char* Persona::getNombre() 
 {
     return nombre;
 }
 
-int Persona::getEdad() const 
+int Persona::getEdad() 
 {
     return edad;
 }
@@ -69,7 +69,7 @@ void Persona::setEdad(int edad)
     this->edad = edad;
 }
 
-void Persona::imprimirInfo() const 
+void Persona::imprimirInfo() 
 {
     cout << "DNI: " << dni << endl;
     cout << "Nombre: " << nombre << endl;

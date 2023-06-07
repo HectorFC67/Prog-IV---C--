@@ -9,7 +9,7 @@ Alumno::Alumno() : Persona(), asignaturas(nullptr), numAsignaturas(0)
 Alumno::Alumno(const char* dni, const char* nombre, int edad, Asignatura* asignaturas, int numAsignaturas) : Persona(dni, nombre, edad) 
 {
     this->numAsignaturas = numAsignaturas;
-    this->asignaturas = new Asignatura[numAsignaturas];
+    this->asignaturas = new Asignatura[numAsignaturas + 1];
     for (int i = 0; i < numAsignaturas; i++) {
         this->asignaturas[i] = asignaturas[i];
     }
@@ -18,7 +18,7 @@ Alumno::Alumno(const char* dni, const char* nombre, int edad, Asignatura* asigna
 
 Alumno::Alumno(const Alumno& other) : Persona(other), numAsignaturas(other.numAsignaturas) 
 {
-    asignaturas = new Asignatura[numAsignaturas];
+    asignaturas = new Asignatura[numAsignaturas + 1];
     for (int i = 0; i < numAsignaturas; i++) {
         asignaturas[i] = other.asignaturas[i];
     }
@@ -52,7 +52,7 @@ void Alumno::agregarAsignatura(const char* nombreAsignatura, int creditosAsignat
     numAsignaturas++;
 }
 
-void Alumno::imprimirInfo() const 
+void Alumno::imprimirInfo()
 {
     Persona::imprimirInfo();
     cout << "Asignaturas matriculadas: " << endl;

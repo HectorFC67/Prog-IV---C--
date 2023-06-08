@@ -3,8 +3,11 @@
 
 using namespace std;
 
-Alumno::Alumno() : Persona(), asignaturas(nullptr), numAsignaturas(0) 
-{}
+Alumno::Alumno() : Persona()
+{
+    this->asignaturas = nullptr;
+    this->numAsignaturas = 0;
+}
 
 Alumno::Alumno(const char* dni, const char* nombre, int edad, Asignatura* asignaturas, int numAsignaturas) : Persona(dni, nombre, edad) 
 {
@@ -41,15 +44,16 @@ int Alumno::getNumAsignaturas() const
 
 void Alumno::agregarAsignatura(const char* nombreAsignatura, int creditosAsignatura) 
 {
+    numAsignaturas++;
     Asignatura* nuevaAsignatura = new Asignatura[numAsignaturas + 1];
-    for (int i = 0; i < numAsignaturas; i++) {
+    for (int i = 0; i < numAsignaturas-1; i++) {
         nuevaAsignatura[i] = asignaturas[i];
     }
     nuevaAsignatura[numAsignaturas] = Asignatura(nombreAsignatura, creditosAsignatura);
 
     delete[] asignaturas;
     asignaturas = nuevaAsignatura;
-    numAsignaturas++;
+    
 }
 
 void Alumno::imprimirInfo()
